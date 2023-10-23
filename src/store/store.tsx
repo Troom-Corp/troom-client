@@ -1,6 +1,6 @@
-import { makeAutoObservable } from "mobx";
-import { IUser } from "../models/IUser";
-import AuthService from "../services/AuthService";
+import { makeAutoObservable } from 'mobx'
+import { IUser } from '../models/IUser'
+import AuthService from '../services/AuthService'
 
 export default class Store {
   user = {} as IUser

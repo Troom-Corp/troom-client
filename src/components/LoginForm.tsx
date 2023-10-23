@@ -1,5 +1,5 @@
-import {FC, useContext, useState} from 'react';
-import { Context } from '../main';
+import {FC, useContext, useState} from 'react'
+import { Context } from '../main'
 
 const LoginForm: FC = () => {
   const [email, setEmail] = useState<string>('')
