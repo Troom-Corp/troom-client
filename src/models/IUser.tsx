@@ -4,4 +4,10 @@ export interface IUser {
   secondName: string
   email: string
   password: string
+  photo: string
+  bio: string
+  phone: string
+  links: string
+  followers: string
+  subscribers: string
 }
