@@ -1,0 +1,21 @@
+.auth {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 70px 65px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 25px;
+
+  &__title {
+    padding-bottom: 40px;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 30px;
+  }
+}

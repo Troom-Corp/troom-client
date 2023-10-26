@@ -7,7 +7,7 @@ const Navbar: FC = () => {
     <div className={styles.navbar}>
       <div className={styles.navbar__links}>
         <A href={'/'} text='Главная' />
-        <A href={'/login'} text='Авторизация' />
+        <A href={'/auth'} text='Авторизация' />
       </div>
     </div>
   )
