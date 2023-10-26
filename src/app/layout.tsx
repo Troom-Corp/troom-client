@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Providers from './providers'
+import Container from '@/components/UI/Container'
 
 export const metadata: Metadata = {
   title: 'Troom',
@@ -17,8 +18,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <Navbar />
-          {children}
+          <Container>
+            <Navbar />
+            {children}
+          </Container>
         </Providers>
       </body>
     </html>

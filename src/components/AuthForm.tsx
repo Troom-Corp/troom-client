@@ -15,6 +15,12 @@ const AuthForm: FC = () => {
     <div className={styles.auth}>
       <h1 className={styles.auth__title}>{isAuth ? 'Авторизация' : 'Регистрация'}</h1>
       <div className={styles.auth__inputs}>
+          <Input
+          onChange={e => setEmail(e.target.value)}
+          value={email}
+          type='text'
+          placeholder='Email'
+        />
         <Input
           onChange={e => setEmail(e.target.value)}
           value={email}

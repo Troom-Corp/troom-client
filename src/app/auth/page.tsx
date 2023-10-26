@@ -1,7 +1,7 @@
 import AuthForm from "@/components/AuthForm"
 import { FC } from "react"
 import styles from './page.module.scss'
-import Container from "@/components/Container"
+import Container from "@/components/UI/Container"
 
 const Auth: FC = () => {
   return (
