@@ -1,13 +1,11 @@
 import { makeAutoObservable } from 'mobx'
 import { IUser } from '../models/IUser'
 import AuthService from '../services/AuthService'
-import axios from 'axios'
-import { AuthResponse } from '@/models/response/AuthResponse'
-import { API_URL } from '@/http'
 
 export default class Store {
   user = {} as IUser
   isAuth = false
+  userType = true
 
   constructor() {
     makeAutoObservable(this)
@@ -19,6 +17,10 @@ export default class Store {
 
   setUser(user: IUser) {
     this.user = user
+  }
+
+  setUserType(bool: boolean) {
+    this.userType = bool
   }
 
   async login(email: string, password: string) {

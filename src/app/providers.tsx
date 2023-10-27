@@ -17,7 +17,7 @@ interface ProvidersProps {
   children: ReactNode
 }
 
-const Providers: FC<ProvidersProps> = ({children}: {children: ReactNode}) => {
+const Providers: FC<ProvidersProps> = ({children}) => {
   return (
     <div>
       <Context.Provider value={{ store }}>
