@@ -16,16 +16,13 @@ const Navbar: FC = () => {
           height={50}
         />
         <span>Troom</span>
+        <input type='search' />
       </Link>
       <div className={styles.navbar__links}>
         <A href={'/'} text='Главная' />
-        <A href={'/auth'} text='Link' />
-        <A href={'/auth'} text='Link' />
-        <A href={'/auth'} text='Link' />
-      </div>
-      <div className={styles.navbar__buttons}>
-        <Button>Вход</Button>
-        <Button>Регистрация</Button>
+        <A href={'/auth'} text='Вакансии' />
+        <A href={'/auth'} text='Уведомления' />
+        <A href={'/auth'} text='Профиль' />
       </div>
     </div>
   )

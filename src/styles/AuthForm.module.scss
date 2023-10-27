@@ -8,57 +8,6 @@
   border: 1px solid black;
   border-radius: 25px;
 
-  &__checkbox {
-    padding-bottom: 30px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-
-    &_item {
-  
-      input {
-        height: 0;
-        width: 0;
-        visibility: hidden;
-  
-        &:checked+label:after {
-          left: calc(100% - 1px);
-          transform: translateX(-100%);
-        }
-      }
-  
-      label {
-        cursor: pointer;
-        text-indent: -9999px;
-        width: 50px;
-        height: 25px;
-        background: grey;
-        display: block;
-        border-radius: 25px;
-        position: relative;
-  
-        &:after {
-          content: '';
-          position: absolute;
-          top: 1px;
-          left: 1px;
-          width: 22.5px;
-          height: 22.5px;
-          background: #fff;
-          border-radius: 22.5px;
-          transition: 0.3s;
-        }
-  
-        &:active::after {
-          width: 30px;
-        }
-      }
-    }
-  }
-  
-
-
-
   &__title {
     padding-bottom: 40px;
   }
@@ -67,32 +16,4 @@
     margin-top: 20px;
     color: #000;
   }
-
-  &__switch {
-    padding-top: 10px;
-    display: flex;
-    gap: 10px;
-
-    &_txt {
-      font-size: 15px;
-      font-weight: 500;
-    }
-
-    &_button {
-      background: none;
-      border: none;
-      color: #487bff;
-      font-size: 15px;
-      cursor: pointer;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-}
-
-.act {
-  color: #487bff;
-  font-weight: 600;
 }

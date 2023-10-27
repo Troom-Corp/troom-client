@@ -4,13 +4,9 @@ import Input from './UI/Input';
 import styles from '@/styles/AuthItems.module.scss'
 import Button from './UI/Button';
 
-interface AuthItemsProps {
-  
-}
-const AuthItems: FC<AuthItemsProps> = () => {
+const AuthItems: FC = () => {
 
   const { store } = useContext(Context)
-  const [userType, setUserType] = useState<string>('')
   const [companyName, setCompanyName] = useState<string>('')
   const [secondName, setSecondName] = useState<string>('')
   const [name, setName] = useState<string>('')
@@ -22,9 +18,7 @@ const AuthItems: FC<AuthItemsProps> = () => {
       {store.userType &&
         <>
           {
-          store.isAuth ?
-            null
-            :
+          !store.isAuth &&
             <>
               <Input
                 onChange={e => setName(e.target.value)}
@@ -45,9 +39,7 @@ const AuthItems: FC<AuthItemsProps> = () => {
       {!store.userType &&
         <>
           {
-          store.isAuth ?
-            null
-            :
+          !store.isAuth &&
             <>
               <Input
                 onChange={e => setCompanyName(e.target.value)}
@@ -71,9 +63,6 @@ const AuthItems: FC<AuthItemsProps> = () => {
         type='password'
         placeholder='Пароль'
       />
-      <div>
-        <button>Hello</button>
-      </div>
     </div>
   )
 }
