@@ -1,4 +1,4 @@
-import $api from '../http'
+import $api from '../http/auth'
 import { AxiosResponse } from 'axios'
 import { AuthResponse } from '../models/response/AuthResponse'
 
