@@ -1,4 +1,4 @@
-import {FC} from 'react';
+import {FC, MouseEvent} from 'react';
 import styles from '@/styles/Button.module.scss'
 
 interface ButtonProps {

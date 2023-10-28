@@ -16,11 +16,6 @@ const AuthForm: FC = () => {
         {store.isAuth ? 'Авторизация' : 'Регистрация'}
       </h1>
       <AuthItems />
-      {store.isAuth ? 
-      <Button>Войти</Button>
-      :
-      <Button>Создать</Button>
-      }
     </div>
   )
 }

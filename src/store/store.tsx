@@ -34,7 +34,7 @@ export default class Store {
     }
   }
 
-  async registration(email: string, password: string) {
+  async registration(email: string, password: string,) {
     try {
       const response = await AuthService.registration(email, password)
       localStorage.setItem('token', response.data.accessToken)

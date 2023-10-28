@@ -63,6 +63,11 @@ const AuthItems: FC = () => {
         type='password'
         placeholder='Пароль'
       />
+      {store.isAuth ?
+        <button  onClick={() => store.login(email, password)} >Войти</button>
+        :
+        <button onClick={() => store.registration(email, password)} >Создать</button>
+      }
     </div>
   )
 }
