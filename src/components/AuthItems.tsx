@@ -4,9 +4,10 @@ import Input from './UI/Input';
 import styles from '@/styles/AuthItems.module.scss'
 import Button from './UI/Button';
 import { AuthReducer, InitialState } from '@/store/reducers/AuthReducer';
+import { observer } from 'mobx-react-lite';
 
 
-const AuthItems: FC = () => {
+const AuthItems: FC = observer(() => {
   const { store } = useContext(Context)
   
   const [state, dispatch] = useReducer(AuthReducer, InitialState)
@@ -71,8 +72,19 @@ const AuthItems: FC = () => {
         :
         <button onClick={() => store.registration(state.email, state.password)} >Создать</button>
       }
+      {store.isAuth ?
+        <div style={{ display: 'flex', gap: 10 }}>
+          <p>Нет аккаунта?</p>
+          <button onClick={() => store.setAuth(false)}>Зарегистрироваться</button>
+        </div>
+        :
+        <div style={{ display: 'flex', gap: 10 }}>
+          <p>Уже есть аккаунт?</p>
+          <button style={{background: 'yellow', border: '5px solid green', fontSize: 50}} onClick={() => store.setAuth(true)}>Войти</button>
+        </div>
+        }
     </div>
   )
-}
+})
 
 export default AuthItems

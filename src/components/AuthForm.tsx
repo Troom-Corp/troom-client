@@ -5,8 +5,9 @@ import { FC, useContext } from 'react'
 import { Context } from '@/app/providers'
 import Button from './UI/Button'
 import AuthItems from './AuthItems'
+import { observer } from 'mobx-react-lite'
 
-const AuthForm: FC = () => {
+const AuthForm: FC = observer(() => {
   const { store } = useContext(Context)
   return (
     <div className={styles.auth}>
@@ -18,6 +19,6 @@ const AuthForm: FC = () => {
       <AuthItems />
     </div>
   )
-}
+})
 
 export default AuthForm

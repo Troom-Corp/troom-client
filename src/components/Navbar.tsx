@@ -23,6 +23,7 @@ const Navbar: FC = () => {
         <A href={'/auth'} text='Вакансии' />
         <A href={'/auth'} text='Уведомления' />
         <A href={'/auth'} text='Профиль' />
+        <A href={'/auth'} text='Авторизация' />
       </div>
     </div>
   )
