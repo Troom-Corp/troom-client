@@ -3,4 +3,21 @@
   flex-direction: column;
   gap: 10px;
   padding-bottom: 30px;
+
+  &__switch {
+    font-size: 15px;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &_button {
+      font-size: 15px;
+      font-weight: 400;
+      background: none;
+      border: none;
+      color: #487bff;
+      cursor: pointer;
+    }
+  }
 }

@@ -19,40 +19,21 @@ const AuthItems: FC = observer(() => {
   
   return (
     <div className={styles.items}>
-      {store.userType &&
+      {
+      !store.isAuth &&
         <>
-          {
-          !store.isAuth &&
-            <>
-              <Input
-                onChange={e => changeState('name', e.target.value)}
-                value={state.name}
-                type='text'
-                placeholder='Имя'
-              />
-              <Input
-              onChange={e => changeState('secondName', e.target.value)}
-                value={state.secondName}
-                type='text'
-                placeholder='Фамилия'
-              />
-            </>
-          }
-        </>
-      }
-      {!store.userType &&
-        <>
-          {
-          !store.isAuth &&
-            <>
-              <Input
-              onChange={e => changeState('companyName', e.target.value)}
-                value={state.companyName}
-                type='text'
-                placeholder='Название компании'
-              />
-            </>
-          }
+          <Input
+            onChange={e => changeState('name', e.target.value)}
+            value={state.name}
+            type='text'
+            placeholder='Имя'
+          />
+          <Input
+          onChange={e => changeState('secondName', e.target.value)}
+            value={state.secondName}
+            type='text'
+            placeholder='Фамилия'
+          />
         </>
       }
       <Input
@@ -73,14 +54,24 @@ const AuthItems: FC = observer(() => {
         <button onClick={() => store.registration(state.email, state.password)} >Создать</button>
       }
       {store.isAuth ?
-        <div style={{ display: 'flex', gap: 10 }}>
+        <div className={styles.items__switch}>
           <p>Нет аккаунта?</p>
-          <button onClick={() => store.setAuth(false)}>Зарегистрироваться</button>
+          <button
+            className={styles.items__switch_button}
+            onClick={() => store.setAuth(false)}
+          >
+              Зарегистрироваться
+          </button>
         </div>
         :
-        <div style={{ display: 'flex', gap: 10 }}>
+        <div className={styles.items__switch}>
           <p>Уже есть аккаунт?</p>
-          <button style={{background: 'yellow', border: '5px solid green', fontSize: 50}} onClick={() => store.setAuth(true)}>Войти</button>
+          <button
+            className={styles.items__switch_button}
+            onClick={() => store.setAuth(true)}
+          >
+            Войти
+          </button>
         </div>
         }
     </div>

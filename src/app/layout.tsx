@@ -1,13 +1,22 @@
 import './globals.css'
-import { Montserrat } from 'next/font/google'
+import { Oswald, Roboto } from 'next/font/google'
 import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import Providers from './providers'
 import Container from '@/components/UI/Container'
 
-const montserrat = Montserrat({
+const oswald = Oswald({
+  weight: ['400', '500'],
   subsets: ['cyrillic'],
-  display: 'swap',
+  variable: '--font-oswald',
+  display: 'swap'
+})
+
+const roboto = Roboto({
+  weight: ['400', '500'],
+  subsets: ['cyrillic'],
+  variable: '--font-roboto',
+  display: 'swap'
 })
 
 export const metadata: Metadata = {
@@ -21,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={montserrat.className}>
+    <html lang="en" className={`${oswald.variable} ${roboto.variable}`}>
+      <body>
         <Providers>
           <Container>
             <Navbar />
