@@ -1,14 +1,22 @@
-import { FC } from 'react';
+import { FC, MouseEventHandler } from 'react';
 import Link from 'next/link'
 
 interface AProps {
-  text: string
   href: string
+  text?: string
+  className?: string
+  children?: React.ReactNode
+  onClick?: MouseEventHandler<HTMLAnchorElement>
 }
-const A: FC<AProps> = ({ text, href }) => {
+const A: FC<AProps> = ({ children, text, href, className, onClick }) => {
   return (
-    <Link href={href}>
-      <>{text}</>
+    <Link 
+      href={href}
+      onClick={onClick}
+      className={className}
+    >
+      {text}
+      {children}
     </Link>
   )
 }

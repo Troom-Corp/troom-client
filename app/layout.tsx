@@ -2,7 +2,7 @@ import './globals.css'
 import { Oswald, Roboto } from 'next/font/google'
 import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
-import Providers from './providers'
+import Providers from '@/components/Providers'
 import Container from '@/components/UI/Container'
 
 const oswald = Oswald({
@@ -32,12 +32,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${oswald.variable} ${roboto.variable}`}>
       <body>
-        <Providers>
-          <Container>
-            <Navbar />
-            {children}
-          </Container>
-        </Providers>
+          <Providers>
+            <Container>
+              <Navbar />
+              {children}
+            </Container>
+          </Providers>
       </body>
     </html>
   )

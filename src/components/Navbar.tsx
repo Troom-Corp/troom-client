@@ -1,14 +1,18 @@
+'use client'
+
 import { FC } from 'react';
 import A from './A';
-import styles from '../styles/Navbar.module.scss'
+import styles from '@/styles/Navbar.module.scss'
 import Image from 'next/image';
-import Link from 'next/link';
-import Button from './UI/Button';
+import { useSession, signOut } from 'next-auth/react'
 
 const Navbar: FC = () => {
+  const session = useSession()
+  console.log(session)
+  
   return (
     <div className={styles.navbar}>
-      <Link href={'/'} className={styles.navbar__logo}>
+      <A href='/' className={styles.navbar__logo}>
         <Image
           src='/logo.svg'
           alt='logo'
@@ -17,13 +21,22 @@ const Navbar: FC = () => {
         />
         <span>Troom</span>
         <input type='search' />
-      </Link>
+      </A>
       <div className={styles.navbar__links}>
-        <A href={'/'} text='Главная' />
-        <A href={'/auth'} text='Вакансии' />
-        <A href={'/auth'} text='Уведомления' />
-        <A href={'/auth'} text='Профиль' />
-        <A href={'/auth'} text='Авторизация' />
+        <A href='/' text='Главная' />
+        {session?.data && (
+          <A href='/profile' text='Профиль' />
+        )}
+        {session?.data ?
+          <A 
+            text='Выйти'
+            href='#' 
+            onClick={() => signOut({
+              callbackUrl: '/'
+            })} 
+          />
+          :
+          <A href='/signin' text='Авторизация' />}
       </div>
     </div>
   )

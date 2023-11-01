@@ -1,7 +1,7 @@
 interface AuthState {
-  companyName: string
+  firstName: string
   secondName: string
-  name: string
+  nickname: string
   email: string
   password: string
 }
@@ -13,9 +13,9 @@ interface AuthAction {
 }
 
 export const InitialState = {
-  companyName: '',
+  firstName: '',
   secondName: '',
-  name: '',
+  nickname: '',
   email: '',
   password: ''
 }
