@@ -2,6 +2,7 @@ import type { AuthOptions, User } from "next-auth";
 import YandexProvider from 'next-auth/providers/yandex'
 import Credentials from 'next-auth/providers/credentials'
 import { users } from "@/data/users";
+import $api from "@/http/auth";
 
 export const authConfig: AuthOptions = {
   providers: [
@@ -17,12 +18,17 @@ export const authConfig: AuthOptions = {
       async authorize (credentials) {
         if (!credentials?.email || !credentials.password) return null
 
-        const currentUser = users.find(user => user.email === credentials.email)
+        try {
+          const response = await $api.post('/auth/sign_in', {
+            email: credentials.email,
+            password: credentials.password
+          })
 
-        if (currentUser && currentUser.password === credentials.password) {
-          const {password, ...userWithoutPass} = currentUser
-
-          return userWithoutPass as User
+          if (response.status === 200) {
+            return response.data;
+          }
+        } catch (error) {
+            console.error(error); 
         }
         
         return null
