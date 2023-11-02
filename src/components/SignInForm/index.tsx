@@ -1,15 +1,20 @@
 'use client'
 
-import { FormEventHandler} from 'react';
+import { FormEventHandler, useContext, useReducer} from 'react';
 import { useRouter } from 'next/navigation'
 import { signIn } from 'next-auth/react'
+import { AuthReducer, InitialState } from '@/store/reducers/AuthReducer';
+import { Context } from '../Providers';
 
 const SignInForm = () => {
-  // !=== AuthReducer ===!
-  // const [state, dispatch] = useReducer(AuthReducer, InitialState)
-  // const changeState = (key: string, value: string) => {
-  //   dispatch({ type: 'set', key, value })
-  // }
+  
+  // !=== Input state ===!
+  const [state, dispatch] = useReducer(AuthReducer, InitialState)
+  const changeState = (key: string, value: string) => {
+    dispatch({ type: 'set', key, value })
+  }
+
+  const { store } = useContext(Context)
 
 
   const router = useRouter()

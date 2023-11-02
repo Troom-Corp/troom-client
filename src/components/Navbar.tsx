@@ -36,7 +36,11 @@ const Navbar: FC = () => {
             })} 
           />
           :
-          <A href='/signin' text='Авторизация' />}
+          <>
+            <A href='/signin' text='Авторизация' />
+            <A href='/registration' text='Регистрация' />
+          </>
+        }
       </div>
     </div>
   )
