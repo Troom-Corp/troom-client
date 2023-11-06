@@ -1,8 +1,9 @@
-import './globals.css'
+import './globals.scss'
 import { Oswald, Roboto } from 'next/font/google'
 import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import { Providers } from '@/components/Providers'
+import Footer from '@/components/Footer'
 
 const oswald = Oswald({
   weight: ['400', '500'],
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: {children: React.ReactNode}) {
           <Providers>
             <Navbar />
             {children}
+            <Footer />
           </Providers>
       </body>
     </html>

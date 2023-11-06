@@ -1,7 +1,7 @@
 'use client'
 
-import Store from "@/store/store";
-import { FC, createContext } from "react";
+import Store from "@/store/store"
+import { FC, createContext } from "react"
 
 interface State {
   store: Store
@@ -19,7 +19,7 @@ interface ProvidersProps {
 export const Providers: FC<ProvidersProps> = ({ children }) => {
   return (
     <Context.Provider value={{ store }}>
-      {children}
+        {children}
     </Context.Provider>
   )
 }

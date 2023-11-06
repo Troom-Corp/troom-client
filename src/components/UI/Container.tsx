@@ -1,11 +1,12 @@
-import {FC, ReactNode} from 'react';
+import {FC} from 'react';
 
 interface ContainerProps {
-  children: ReactNode
+  children: React.ReactNode
 }
-const Container: FC<ContainerProps> = ({children}) => {
+
+const Container: FC<ContainerProps> = ({ children }) => {
   return (
-    <div style={{width: '1200px', margin: '0 auto'}}>
+    <div style={{width: '1440px', marginInline: 'auto'}}>
       {children}
     </div>
   )

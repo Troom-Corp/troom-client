@@ -6,15 +6,10 @@ interface AProps {
   text?: string
   className?: string
   children?: React.ReactNode
-  onClick?: MouseEventHandler<HTMLAnchorElement>
 }
-const A: FC<AProps> = ({ children, text, href, className, onClick }) => {
+const A: FC<AProps> = ({ href, text, children, className }) => {
   return (
-    <Link 
-      href={href}
-      onClick={onClick}
-      className={className}
-    >
+    <Link href={href} className={className}>
       {text}
       {children}
     </Link>

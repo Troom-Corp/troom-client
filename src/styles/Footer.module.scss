@@ -1,0 +1,15 @@
+@import '@/styles/variables';
+
+.footer {
+  margin-top: 60px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+
+  &__background {
+    padding-block: 35px;
+    background: $blue;
+  }
+}
