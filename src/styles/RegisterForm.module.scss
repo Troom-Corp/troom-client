@@ -1,0 +1,18 @@
+@import './variables.scss';
+
+.form {
+  max-width: 720px;
+  margin: 15vh auto;
+  border-radius: 20px;
+  background: #fff;
+  padding: 90px 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .personal {
+      
+      display: flex;
+      justify-content: space-between;
+    }
+}

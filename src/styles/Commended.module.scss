@@ -1,0 +1,22 @@
+@import './variables.scss';
+
+.commended {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__top {
+    @include default;
+    grid-area: adtop;
+    
+  }
+  &__bot {
+    @include default;
+    grid-area: adbot;
+  }
+}

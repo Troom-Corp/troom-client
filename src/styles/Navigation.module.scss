@@ -1,0 +1,16 @@
+@import './variables.scss';
+
+.nav {
+  grid-area: nav;
+  align-self: start;
+  background: #fff;
+  border-radius: 20px;
+
+  &__content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+}
