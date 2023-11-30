@@ -1,12 +1,10 @@
-import {FC} from 'react'
-import styles from '@/styles/Post.module.scss'
+import { FC } from 'react'
 import Image from 'next/image'
 import postImage from '/public/mock.png'
 
-interface MainProps {
-  
-}
-const Post: FC<MainProps> = () => {
+import styles from '@/styles/Post.module.scss'
+
+const Post: FC = () => {
   return (
     <>
       <div className={styles.main}>

@@ -1,10 +1,8 @@
-import {FC} from 'react'
+import { FC } from 'react'
+
 import styles from '@/styles/CreatePost.module.scss'
 
-interface CreatePostProps {
-  
-}
-const CreatePost: FC<CreatePostProps> = () => {
+const CreatePost: FC = () => {
   return (
     <div className={styles.create}>
       <input type='text' placeholder='Create new post'/>

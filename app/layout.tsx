@@ -1,24 +1,24 @@
 'use client'
 
 import type { Metadata } from 'next'
-import { Montserrat } from 'next/font/google'
-import './globals.scss'
-import { Providers } from '@/components/Providers'
+import Providers from '@/components/Providers'
+import Navigation from '@/components/sidebar/Navigation'
 
+import { Nunito } from 'next/font/google'
+import '@/styles/global/_globals.scss'
 
-const montserrat = Montserrat({
+const nunito = Nunito({
   subsets: ['cyrillic'],
-  variable: '--font-montserrat',
+  variable: '--font-nunito',
   display: 'swap'
 })
 
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" className={montserrat.variable}>
+    <html lang="ru" className={nunito.variable}>
       <body>
         <Providers>
-          { children }
+            { children }
         </Providers>
       </body>
     </html>

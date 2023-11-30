@@ -1,25 +1,29 @@
 'use client'
 
-import Store from "@/api/store/store";
-import { createContext, FC } from "react";
 import { SessionProvider } from 'next-auth/react'
+import { createContext } from 'react'
+import AuthStore from '@/store/authStore'
 
-interface State {
-  store: Store
-}
-const store = new Store()
-export const Context = createContext<State>({ store })
 
-interface ProvidersProps {
-  children: React.ReactNode
+// !=== GLOBAL STATE FOR AUTH ===!
+interface AuthState {
+  authStore: AuthStore
 }
 
-export const Providers: FC<ProvidersProps> = ( {children} ) => {
+const authStore = new AuthStore()
+
+export const Context = createContext<AuthState>({ authStore })
+
+// !=== COMPONENT ===!
+
+const Providers = ({ children }:{children: React.ReactNode}) => {
   return (
-    <Context.Provider value={{store}}>
-      <SessionProvider>
+    <SessionProvider>
+      <Context.Provider value={{ authStore }}>
         {children}
-      </SessionProvider>
-    </Context.Provider>
+      </Context.Provider>
+    </SessionProvider>
   )
 }
+
+export default Providers

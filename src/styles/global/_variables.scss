@@ -1,0 +1,23 @@
+// Default component
+@mixin default {
+  padding: 30px;
+  background: #FFF;
+  border-radius: 20px;
+}
+
+// Main-Font
+$font: var(--font-nunito);
+
+// !=== COLORS ===!
+
+// Main
+$main-color: #6237A0;
+$main-font: #180B2A;
+$main-background: #F5F5F5;
+
+// Input
+$input-color: #757575;
+$input-background: transparent;
+$input-outline: $main-color; 
+$input-error: #EE0000;
+$input-success: #00BE00;
