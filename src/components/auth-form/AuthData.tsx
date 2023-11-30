@@ -7,7 +7,11 @@ import InputUI from '../InputUI'
 
 import styles from '@/styles/forms/FormUI.module.scss'
 
-const AuthData = (type: string) => {
+interface AuthDataProps {
+  type: string
+}
+
+const AuthData: React.FC<AuthDataProps> = ({type}) => {
   const { authStore } = useContext(Context)
   const { signUpData } = authStore
 

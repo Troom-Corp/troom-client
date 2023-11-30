@@ -46,7 +46,7 @@ export default class AuthStore {
 
   async signUp() {
     try {
-      // !=== DELETE REPEATPASSWORD KEY AT THE POST ===!
+      // !=== DELETE REPEAT-PASSWORD KEY AT THE POST ===!
       const { repeatPassword, ...responseData } = this.signUpData
       const response = await $auth.post('/users/sign_up', responseData)
 
